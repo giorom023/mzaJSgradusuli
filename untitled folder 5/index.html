@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Html DOM events</title>
+</head>
+<body>
+    <h1>Html DOM events</h1>
+    <h2>Html</h2>
+    <form id="form">
+        <label for="A">A=</label>
+        <input type="text" name="A" id="A">
+        <br>
+        <label for="B">B=</label>
+        <input type="text" name="B" id="B">
+        <br>
+    </form>
+    <button onclick="myFunction(); myFunction2();">Click Me</button>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+<script>
+    function myFunction() {
+        var aValue = parseFloat(document.getElementById('A').value);
+        var bValue = parseFloat(document.getElementById('B').value);
+
+        if (!isNaN(aValue) && !isNaN(bValue)) {
+            document.getElementById('demo1').innerText = aValue * bValue;
+        } else {
+            document.getElementById('demo1').innerText = "Invalid input";
+        }
+    }
+
+    function myFunction2() {
+        var aValue = parseFloat(document.getElementById('A').value);
+        var bValue = parseFloat(document.getElementById('B').value);
+
+        if (!isNaN(aValue) && !isNaN(bValue) && bValue !== 0) {
+            document.getElementById('demo2').innerText = aValue * 360 / bValue;
+        } else {
+            document.getElementById('demo2').innerText = "Invalid input or division by zero";
+        }
+    }
+</script>
+
+</body>
+</html>
+
